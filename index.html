@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>אבירם אושרי — הדברה מקצועית ולכידת נחשים</title>
+<meta name="description" content="אבירם אושרי — מדביר מורשה ולוכד נחשים מוסמך רט״ג. הדברה מקצועית לדירות, משרדים וחצרות באזור הצפון.">
+
+<!-- Fonts from allowed CDN -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/heebo@5.0.8/400.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/heebo@5.0.8/500.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/heebo@5.0.8/700.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/secular-one@5.0.8/index.css">
+
+<style>
+/* ===== RESET & BASE ===== */
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+:root {
+  --green-dark: #1a3a2a;
+  --green-mid: #2d5e3e;
+  --green-accent: #7ec88a;
+  --cream: #f5f0e8;
+  --cream-muted: rgba(240,237,228,0.75);
+  --font-display: 'Secular One', sans-serif;
+  --font-body: 'Heebo', sans-serif;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+}
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: var(--font-body);
+  direction: rtl;
+  color: #1a1a1a;
+  background: #fff;
+  line-height: 1.7;
+}
+
+/* ===== ACCESSIBILITY ===== */
+.skip-link {
+  position: absolute;
+  top: -100px; right: 1rem;
+  background: var(--green-dark);
+  color: var(--green-accent);
+  padding: 0.5rem 1rem;
+  border-radius: 0 0 8px 8px;
+  font-weight: 700;
+  z-index: 9999;
+  text-decoration: none;
+  transition: top 0.2s;
+}
+.skip-link:focus { top: 0; }
+
+.a11y-bar {
+  background: #f0f0f0;
+  border-bottom: 1px solid #ddd;
+  padding: 6px 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  direction: rtl;
+}
+.a11y-bar span { color: #555; }
+.a11y-btn {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 3px 10px;
+  font-size: 13px;
+  cursor: pointer;
+  font-family: var(--font-body);
+  color: #333;
+  transition: background 0.15s;
+}
+.a11y-btn:hover, .a11y-btn:focus { background: #e8e8e8; outline: 2px solid var(--green-accent); }
+.a11y-btn.active { background: var(--green-dark); color: #fff; border-color: var(--green-dark); }
+
+/* High contrast mode */
+body.high-contrast {
+  background: #000 !important;
+  color: #fff !important;
+}
+body.high-contrast .hero { background: #000 !important; border-bottom: 2px solid #ff0; }
+body.high-contrast .why-card,
+body.high-contrast .pest-item,
+body.high-contrast .contact-card { background: #111 !important; border-color: #fff !important; color: #fff !important; }
+body.high-contrast .why-card h3,
+body.high-contrast .why-card p,
+body.high-contrast .pest-name,
+body.high-contrast .pest-desc,
+body.high-contrast .section-title,
+body.high-contrast .section-subtitle,
+body.high-contrast .step-content h4,
+body.high-contrast .step-content p,
+body.high-contrast .contact-info h3,
+body.high-contrast .contact-info .subtitle { color: #fff !important; }
+body.high-contrast .pests-section { background: #111 !important; }
+body.high-contrast .a11y-bar { background: #111; border-color: #555; }
+body.high-contrast .a11y-btn { background: #222; color: #fff; border-color: #888; }
+
+/* Large text mode */
+body.large-text { font-size: 19px; }
+body.large-text .pest-name { font-size: 15px; }
+body.large-text .pest-desc { font-size: 13px; }
+
+/* ===== NAV ===== */
+nav {
+  background: var(--green-dark);
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav-logo {
+  font-family: var(--font-display);
+  color: var(--green-accent);
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+.nav-cta-row { display: flex; gap: 8px; }
+.nav-phone {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--green-accent); color: var(--green-dark);
+  font-weight: 700; font-size: 13px;
+  padding: 7px 14px; border-radius: 7px;
+  text-decoration: none; border: none;
+}
+.nav-wa {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: #25D366; color: #fff;
+  font-weight: 700; font-size: 13px;
+  padding: 7px 14px; border-radius: 7px;
+  text-decoration: none; border: none;
+}
+
+/* ===== HERO ===== */
+.hero {
+  background: var(--green-dark);
+  color: var(--cream);
+  padding: 3.5rem 1.5rem 3rem;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -60px; right: -60px;
+  width: 280px; height: 280px;
+  border-radius: 50%;
+  background: rgba(120,200,130,0.07);
+  pointer-events: none;
+}
+.hero-badge {
+  display: inline-block;
+  background: rgba(120,200,130,0.18);
+  border: 1px solid rgba(120,200,130,0.35);
+  color: var(--green-accent);
+  font-size: 12px; font-weight: 500;
+  padding: 4px 14px; border-radius: 20px;
+  margin-bottom: 1.2rem;
+}
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(1.7rem, 5vw, 2.4rem);
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 0.8rem;
+  color: var(--cream);
+}
+.hero h1 span { color: var(--green-accent); }
+.hero p {
+  font-size: 1rem; line-height: 1.7;
+  color: var(--cream-muted);
+  max-width: 560px;
+  margin-bottom: 0.6rem;
+}
+.hero-scope {
+  font-size: 0.85rem;
+  color: rgba(240,237,228,0.55);
+  margin-bottom: 1.8rem;
+}
+.hero-ctas {
+  display: flex; gap: 12px; flex-wrap: wrap;
+}
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--green-accent); color: var(--green-dark);
+  font-family: var(--font-body); font-weight: 700; font-size: 15px;
+  padding: 12px 22px; border-radius: var(--radius-sm);
+  text-decoration: none; border: none; cursor: pointer;
+}
+.btn-whatsapp {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: #25D366; color: #fff;
+  font-family: var(--font-body); font-weight: 700; font-size: 15px;
+  padding: 12px 22px; border-radius: var(--radius-sm);
+  text-decoration: none; border: none; cursor: pointer;
+}
+.wa-svg { width: 18px; height: 18px; flex-shrink: 0; }
+
+/* ===== SECTIONS ===== */
+.section { padding: 2.5rem 1.5rem; }
+.section-title {
+  font-family: var(--font-display);
+  font-size: 1.55rem; font-weight: 400;
+  margin-bottom: 0.4rem;
+  color: #1a1a1a;
+}
+.section-subtitle {
+  font-size: 0.92rem; color: #666;
+  margin-bottom: 1.8rem; line-height: 1.6;
+}
+
+/* ===== WHY CARDS ===== */
+.why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px,1fr)); gap: 14px; }
+.why-card {
+  background: #f8f8f6;
+  border: 0.5px solid #e0e0db;
+  border-radius: var(--radius-md); padding: 1.2rem;
+}
+.why-icon {
+  width: 40px; height: 40px; border-radius: 10px;
+  background: #eaf3de;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 0.8rem; font-size: 18px;
+}
+.why-card h3 { font-size: 15px; font-weight: 500; margin-bottom: 0.35rem; }
+.why-card p { font-size: 13px; color: #666; line-height: 1.6; }
+
+/* ===== PESTS ===== */
+.pests-section { padding: 2.5rem 1.5rem; background: #f8f8f6; }
+.pests-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px,1fr)); gap: 10px; }
+.pest-item {
+  background: #fff;
+  border: 0.5px solid #e0e0db;
+  border-radius: 10px; padding: 1rem 0.75rem; text-align: center;
+}
+.pest-emoji { font-size: 24px; display: block; margin-bottom: 6px; }
+.pest-name { font-size: 13px; font-weight: 500; color: #1a1a1a; display: block; margin-bottom: 2px; }
+.pest-desc { font-size: 11px; color: #888; }
+
+/* ===== SCOPE BANNER ===== */
+.scope-banner {
+  background: #eaf3de;
+  border-top: 1px solid #c5deb0;
+  border-bottom: 1px solid #c5deb0;
+  padding: 1.5rem;
+  display: flex; flex-wrap: wrap; gap: 12px;
+  align-items: center; justify-content: center;
+}
+.scope-item {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 14px; font-weight: 500; color: #2d5e3e;
+}
+.scope-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--green-mid); flex-shrink: 0;
+}
+
+/* ===== LICENSE BANNER ===== */
+.license-banner {
+  background: var(--green-dark);
+  padding: 2rem 1.5rem;
+  text-align: center; color: var(--cream);
+}
+.license-banner h2 {
+  font-family: var(--font-display);
+  font-size: 1.3rem; font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+.license-banner p { font-size: 0.88rem; color: var(--cream-muted); margin-bottom: 1.2rem; line-height: 1.6; }
+.badge-row { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+.badge {
+  background: rgba(126,200,138,0.15);
+  border: 1px solid rgba(126,200,138,0.3);
+  color: var(--green-accent);
+  font-size: 12px; font-weight: 500;
+  padding: 5px 12px; border-radius: 20px;
+}
+
+/* ===== PROCESS ===== */
+.process-section { padding: 2.5rem 1.5rem; }
+.steps { display: flex; flex-direction: column; }
+.step { display: flex; gap: 16px; align-items: flex-start; padding-bottom: 1.4rem; position: relative; }
+.step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 18px; top: 36px;
+  width: 1px; height: calc(100% - 20px);
+  background: #e0e0db;
+}
+.step-num {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--green-dark); color: var(--green-accent);
+  font-size: 14px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.step-content h4 { font-size: 15px; font-weight: 500; margin-bottom: 3px; }
+.step-content p { font-size: 13px; color: #666; line-height: 1.6; }
+
+/* ===== CONTACT ===== */
+.contact-section { padding: 2rem 1.5rem; border-top: 0.5px solid #e0e0db; }
+.contact-card {
+  background: #f8f8f6;
+  border: 0.5px solid #e0e0db;
+  border-radius: var(--radius-md); padding: 1.5rem;
+}
+.contact-top { display: flex; align-items: center; gap: 16px; margin-bottom: 1.2rem; }
+.contact-avatar {
+  width: 56px; height: 56px; border-radius: 50%;
+  background: var(--green-dark);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--green-accent); font-size: 24px; flex-shrink: 0;
+}
+.contact-info h3 { font-size: 18px; font-weight: 700; margin-bottom: 2px; }
+.contact-info .subtitle { font-size: 13px; color: #666; margin-bottom: 6px; }
+.license-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.license-tag {
+  display: inline-block;
+  background: rgba(45,94,62,0.1);
+  border: 1px solid rgba(45,94,62,0.25);
+  color: #2d5e3e;
+  font-size: 11px; font-weight: 500;
+  padding: 2px 10px; border-radius: 20px;
+}
+.contact-buttons { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 0.5rem; }
+.btn-phone-lg {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--green-dark); color: var(--green-accent);
+  font-family: var(--font-body); font-weight: 700; font-size: 15px;
+  padding: 12px 22px; border-radius: var(--radius-sm);
+  text-decoration: none; border: none; cursor: pointer;
+}
+.btn-wa-lg {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: #25D366; color: #fff;
+  font-family: var(--font-body); font-weight: 700; font-size: 15px;
+  padding: 12px 22px; border-radius: var(--radius-sm);
+  text-decoration: none; border: none; cursor: pointer;
+}
+
+/* ===== FLOATING CTA (mobile) ===== */
+.floating-cta {
+  position: fixed;
+  bottom: 1.2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex; gap: 10px;
+  z-index: 200;
+  pointer-events: none;
+}
+.floating-cta a {
+  pointer-events: all;
+  display: inline-flex; align-items: center; gap: 7px;
+  font-family: var(--font-body); font-weight: 700; font-size: 14px;
+  padding: 11px 20px; border-radius: 50px;
+  text-decoration: none; border: none;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+}
+.float-phone { background: var(--green-dark); color: var(--green-accent); }
+.float-wa { background: #25D366; color: #fff; }
+
+/* ===== FOOTER ===== */
+footer {
+  background: #111;
+  color: #888;
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 12px;
+  line-height: 1.8;
+}
+footer a { color: #aaa; }
+
+/* ===== ANALYTICS DASHBOARD ===== */
+#analytics-dashboard {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 9000;
+  align-items: center;
+  justify-content: center;
+}
+#analytics-dashboard.open { display: flex; }
+.dashboard-panel {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  width: min(480px, 92vw);
+  max-height: 80vh;
+  overflow-y: auto;
+  direction: rtl;
+  position: relative;
+}
+.dashboard-panel h2 {
+  font-family: var(--font-display);
+  font-size: 1.3rem; font-weight: 400;
+  margin-bottom: 1.2rem;
+  color: var(--green-dark);
+}
+.stat-row {
+  display: grid; grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px; margin-bottom: 1.5rem;
+}
+.stat-box {
+  background: #f4f4f0;
+  border-radius: 10px; padding: 1rem;
+  text-align: center;
+}
+.stat-num { font-size: 2rem; font-weight: 700; color: var(--green-dark); line-height: 1; }
+.stat-lbl { font-size: 12px; color: #888; margin-top: 4px; }
+.events-list { font-size: 13px; }
+.event-item {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 8px 0;
+  border-bottom: 0.5px solid #eee;
+  color: #444;
+}
+.event-item:last-child { border-bottom: none; }
+.event-time { color: #aaa; font-size: 12px; }
+.close-dash {
+  position: absolute; top: 1rem; left: 1rem;
+  background: none; border: none; font-size: 22px;
+  cursor: pointer; color: #888;
+  font-family: var(--font-body);
+}
+.dash-toggle {
+  position: fixed;
+  bottom: 5rem; left: 1rem;
+  background: var(--green-dark);
+  color: var(--green-accent);
+  border: none; border-radius: 50px;
+  padding: 8px 14px; font-size: 12px; font-weight: 700;
+  cursor: pointer; font-family: var(--font-body);
+  z-index: 300;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+.online-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: #22c55e;
+  display: inline-block; margin-left: 4px;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%,100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+/* ===== SCREEN READER ONLY ===== */
+.sr-only {
+  position: absolute; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
+
+/* ===== COLOR BLIND MODES ===== */
+body.cb-deuteranopia { filter: url(#deuteranopia); }
+body.cb-protanopia   { filter: url(#protanopia); }
+body.cb-tritanopia   { filter: url(#tritanopia); }
+body.cb-grayscale    { filter: grayscale(100%); }
+
+/* ===== SCREEN READER PANEL ===== */
+#tts-panel {
+  position: fixed;
+  bottom: 5.5rem; right: 1rem;
+  background: #1a3a2a;
+  color: #f5f0e8;
+  border-radius: 12px;
+  padding: 0;
+  z-index: 400;
+  width: min(320px, 92vw);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+  display: none;
+  direction: rtl;
+  font-family: var(--font-body);
+}
+#tts-panel.open { display: block; }
+#tts-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(126,200,138,0.2);
+  font-weight: 700; font-size: 14px; color: #7ec88a;
+}
+#tts-body { padding: 10px 14px 14px; }
+#tts-status {
+  font-size: 12px; color: rgba(240,237,228,0.6);
+  margin-bottom: 10px; min-height: 18px;
+  line-height: 1.4;
+}
+.tts-btns { display: flex; gap: 8px; flex-wrap: wrap; }
+.tts-btn {
+  background: rgba(126,200,138,0.15);
+  border: 1px solid rgba(126,200,138,0.3);
+  color: #7ec88a;
+  font-family: var(--font-body);
+  font-size: 13px; font-weight: 500;
+  padding: 7px 12px; border-radius: 8px;
+  cursor: pointer;
+}
+.tts-btn:hover { background: rgba(126,200,138,0.25); }
+.tts-btn:disabled { opacity: 0.4; cursor: default; }
+#tts-speed { width: 100%; margin: 10px 0 4px; accent-color: #7ec88a; }
+.tts-lbl { font-size: 11px; color: rgba(240,237,228,0.5); }
+
+/* ===== A11Y PANEL (color blind) ===== */
+#cb-panel {
+  position: fixed;
+  bottom: 5.5rem; left: 1rem;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 0;
+  z-index: 400;
+  width: min(260px, 92vw);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  display: none;
+  direction: rtl;
+  font-family: var(--font-body);
+}
+#cb-panel.open { display: block; }
+.cb-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 10px 12px;
+  border-bottom: 1px solid #eee;
+  font-size: 13px; font-weight: 700; color: #333;
+}
+.cb-options { padding: 8px 0; }
+.cb-opt {
+  display: flex; align-items: center; gap: 10px;
+  padding: 8px 14px; cursor: pointer;
+  font-size: 13px; color: #444;
+}
+.cb-opt:hover { background: #f5f5f5; }
+.cb-opt input[type=radio] { accent-color: #1a3a2a; width: 16px; height: 16px; }
+.cb-swatch {
+  width: 24px; height: 16px; border-radius: 4px;
+  border: 1px solid #ccc; flex-shrink: 0;
+}
+
+/* ===== SILENT / DEAF MODE ===== */
+body.deaf-mode .floating-cta .float-wa::before,
+body.deaf-mode .btn-wa::before,
+body.deaf-mode .btn-wa-lg::before,
+body.deaf-mode .nav-wa::before {
+  content: '💬 ';
+}
+.deaf-notice {
+  display: none;
+  background: #fff3cd;
+  border: 1px solid #ffc107;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 13px;
+  color: #856404;
+  margin: 1rem 1.5rem;
+  text-align: right;
+}
+body.deaf-mode .deaf-notice { display: block; }
+
+/* ===== FOCUS RING (keyboard nav) ===== */
+:focus-visible {
+  outline: 3px solid #7ec88a;
+  outline-offset: 3px;
+}
+
+</style>
+</head>
+<body>
+
+
+<!-- SVG Color Blind Filters (hidden) -->
+<svg id="cb-filters" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true" focusable="false">
+  <defs>
+    <filter id="deuteranopia">
+      <feColorMatrix type="matrix" values="0.367 0.861 -0.228 0 0  0.280 0.673  0.047 0 0  -0.012 0.043  0.969 0 0  0 0 0 1 0"/>
+    </filter>
+    <filter id="protanopia">
+      <feColorMatrix type="matrix" values="0.152 1.053 -0.205 0 0  0.115 0.786  0.099 0 0  -0.004 -0.048  1.052 0 0  0 0 0 1 0"/>
+    </filter>
+    <filter id="tritanopia">
+      <feColorMatrix type="matrix" values="1.256 -0.077 -0.179 0 0  -0.078  0.931  0.148 0 0   0.005  0.691  0.304 0 0   0 0 0 1 0"/>
+    </filter>
+  </defs>
+</svg>
+
+<!-- Skip to content (accessibility) -->
+<a href="#main-content" class="skip-link">דלג לתוכן הראשי</a>
+
+<!-- Accessibility toolbar -->
+<div class="a11y-bar" role="toolbar" aria-label="סרגל נגישות">
+  <span class="sr-only">אפשרויות נגישות:</span>
+  <button class="a11y-btn" id="btn-font-up" aria-label="הגדל טקסט">א+</button>
+  <button class="a11y-btn" id="btn-font-down" aria-label="הקטן טקסט">א−</button>
+  <button class="a11y-btn" id="btn-contrast" aria-label="ניגודיות גבוהה" aria-pressed="false">◐ ניגודיות</button>
+  <button class="a11y-btn" id="btn-tts" aria-label="קורא מסך - הקראת האתר" title="הקראה לעיוורים">🔊 הקראה</button>
+  <button class="a11y-btn" id="btn-cb" aria-label="מצב עיוורי צבעים" title="התאמה לעיוורי צבעים">🎨 צבעים</button>
+  <button class="a11y-btn" id="btn-deaf" aria-label="מצב חירשים — הדגש תקשורת טקסטואלית" title="מצב חירשים">🤫 חירשים</button>
+</div>
+
+<!-- Sticky nav -->
+<nav role="navigation" aria-label="ניווט ראשי">
+  <div class="nav-logo">אבירם אושרי | הדברה</div>
+  <div class="nav-cta-row">
+    <a href="tel:0524284251" class="nav-phone" aria-label="התקשר עכשיו">📞 התקשר</a>
+    <a href="https://wa.me/972524284251" class="nav-wa" target="_blank" rel="noopener" aria-label="שלח וואטסאפ">
+      <svg class="wa-svg" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      וואטסאפ
+    </a>
+  </div>
+</nav>
+
+<!-- Deaf mode notice -->
+<div class="deaf-notice" role="status" aria-live="polite">
+  ♿ מצב חירשים פעיל — כל כפתורי הקשר מובילים לוואטסאפ (הודעה כתובה). לחצו על כפתור וואטסאפ כדי לשלוח הודעה לאבירם.
+</div>
+
+<main id="main-content">
+
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="hero-heading">
+    <div class="hero-badge" role="text">מדביר ולוכד נחשים מורשה | אזור הצפון</div>
+    <h1 id="hero-heading">הדברה <span>מקצועית</span><br>שאפשר לסמוך עליה</h1>
+    <p>מזיקים בבית הם לא רק מטרד — הם סיכון בריאותי אמיתי. פתרון מקצועי, בטוח ויעיל הוא הדרך היחידה לסיים את הבעיה מהשורש.</p>
+    <p class="hero-scope">דירות · משרדים · חצרות (עד 500 מ"ר) · גינות</p>
+    <div class="hero-ctas">
+      <a href="tel:0524284251" class="btn-primary" aria-label="התקשר לאבירם">📞 052-428-4251</a>
+      <a href="https://wa.me/972524284251" class="btn-whatsapp" target="_blank" rel="noopener" aria-label="שלח הודעת וואטסאפ">
+        <svg class="wa-svg" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        שלח וואטסאפ
+      </a>
+    </div>
+  </section>
+
+  <!-- WHY SECTION -->
+  <section class="section" aria-labelledby="why-heading">
+    <h2 id="why-heading" class="section-title">למה הדברה מקצועית חשובה?</h2>
+    <p class="section-subtitle">מזיקים גורמים לנזק בריאותי וכלכלי — טיפול עצמאי לרוב לא מספיק</p>
+    <div class="why-grid">
+      <div class="why-card" role="article">
+        <div class="why-icon" aria-hidden="true">🦠</div>
+        <h3>סיכון בריאותי</h3>
+        <p>מכרסמים, ג'וקים וחרקים מעבירים מחלות, אלרגנים ובקטריות לאוכל ולסביבת המגורים.</p>
+      </div>
+      <div class="why-card" role="article">
+        <div class="why-icon" aria-hidden="true">🏠</div>
+        <h3>נזק לנכס</h3>
+        <p>מכרסמים גורמים לנזקים מבניים יקרים שמצטברים לאורך זמן ללא טיפול.</p>
+      </div>
+      <div class="why-card" role="article">
+        <div class="why-icon" aria-hidden="true">⏱️</div>
+        <h3>התרבות מהירה</h3>
+        <p>כל יום של דיחוי מאפשר למזיקים להתרבות. מה שמתחיל בכמה פרטים הופך במהרה לפלישה.</p>
+      </div>
+      <div class="why-card" role="article">
+        <div class="why-icon" aria-hidden="true">🔬</div>
+        <h3>אבחון מדויק</h3>
+        <p>טיפול יעיל מתחיל בזיהוי נכון של המזיק, מוקד ההתפשטות ודרכי הכניסה לנכס.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PESTS -->
+  <section class="pests-section" aria-labelledby="pests-heading">
+    <h2 id="pests-heading" class="section-title">מזיקים שאנחנו מטפלים בהם</h2>
+    <p class="section-subtitle" style="margin-bottom:1.5rem;">פתרון מותאם לכל סוג מזיק</p>
+    <div class="pests-grid" role="list">
+      <div class="pest-item" role="listitem">
+        <span class="pest-emoji" aria-hidden="true">🐀</span>
+        <span class="pest-name">חולדות ועכברים</span>
+        <span class="pest-desc">לכידה והדברה · גינות ודירות</span>
+      </div>
+      <div class="pest-item" role="listitem">
+        <span class="pest-emoji" aria-hidden="true">🪳</span>
+        <span class="pest-name">ג'וקים</span>
+        <span class="pest-desc">מטבחים ומרתפים</span>
+      </div>
+      <div class="pest-item" role="listitem">
+        <span class="pest-emoji" aria-hidden="true">🐜</span>
+        <span class="pest-name">תיקנים ונמלי אש</span>
+        <span class="pest-desc">מושבות פנים וחוץ</span>
+      </div>
+      <div class="pest-item" role="listitem">
+        <span class="pest-emoji" aria-hidden="true">🦟</span>
+        <span class="pest-name">יתושים וזבובים</span>
+        <span class="pest-desc">ריסוס ומניעה</span>
+      </div>
+      <div class="pest-item" role="listitem">
+        <span class="pest-emoji" aria-hidden="true">🪲</span>
+        <span class="pest-name">פרעושים וקרציות</span>
+        <span class="pest-desc">בית וגינה · חיות מחמד</span>
+      </div>
+      <div class="pest-item" role="listitem">
+        <span class="pest-emoji" aria-hidden="true">🐝</span>
+        <span class="pest-name">צרעות</span>
+        <span class="pest-desc">קינים וממלאות</span>
+      </div>
+      <div class="pest-item" role="listitem">
+        <span class="pest-emoji" aria-hidden="true">🐍</span>
+        <span class="pest-name">נחשים</span>
+        <span class="pest-desc">לכידה מקצועית · רט"ג</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCOPE BANNER -->
+  <div class="scope-banner" role="region" aria-label="אזורי שירות">
+    <div class="scope-item"><span class="scope-dot" aria-hidden="true"></span>דירות ובתים</div>
+    <div class="scope-item"><span class="scope-dot" aria-hidden="true"></span>משרדים ועסקים</div>
+    <div class="scope-item"><span class="scope-dot" aria-hidden="true"></span>חצרות עד 500 מ"ר</div>
+    <div class="scope-item"><span class="scope-dot" aria-hidden="true"></span>לכידת חולדים בגינות</div>
+    <div class="scope-item"><span class="scope-dot" aria-hidden="true"></span>אזור הצפון</div>
+  </div>
+
+  <!-- LICENSE -->
+  <div class="license-banner" role="region" aria-label="רישיונות ואישורים">
+    <h2>רישיונות ואישורים מקצועיים</h2>
+    <p>כל טיפול מתבצע בהתאם לתקנות הגנת הסביבה, עם חומרים מאושרים ובטוחים לבני משפחה ולחיות מחמד</p>
+    <div class="badge-row">
+      <span class="badge">מדביר תברואתי 3687</span>
+      <span class="badge">לוכד נחשים רט"ג A4876</span>
+      <span class="badge">חומרים מאושרים</span>
+      <span class="badge">בטוח למשפחה</span>
+      <span class="badge">אחריות על הטיפול</span>
+    </div>
+  </div>
+
+  <!-- PROCESS -->
+  <section class="process-section" aria-labelledby="process-heading">
+    <h2 id="process-heading" class="section-title">איך עובד הטיפול?</h2>
+    <p class="section-subtitle">תהליך מובנה שמביא לתוצאות ארוכות טווח</p>
+    <div class="steps" role="list">
+      <div class="step" role="listitem">
+        <div class="step-num" aria-label="שלב 1">1</div>
+        <div class="step-content">
+          <h4>סקר ואבחון ראשוני</h4>
+          <p>בדיקת הנכס, זיהוי המזיק וממדי הנגיעה, ואיתור נקודות הכניסה.</p>
+        </div>
+      </div>
+      <div class="step" role="listitem">
+        <div class="step-num" aria-label="שלב 2">2</div>
+        <div class="step-content">
+          <h4>תוכנית טיפול מותאמת</h4>
+          <p>בחירת שיטת הדברה, חומרים ולוח זמנים — בהתאם לסוג הנגיעה ולמאפייני הנכס.</p>
+        </div>
+      </div>
+      <div class="step" role="listitem">
+        <div class="step-num" aria-label="שלב 3">3</div>
+        <div class="step-content">
+          <h4>ביצוע הטיפול</h4>
+          <p>הדברה מקצועית עם ציוד מתאים ובטיחות מרבית לדיירים.</p>
+        </div>
+      </div>
+      <div class="step" role="listitem">
+        <div class="step-num" aria-label="שלב 4">4</div>
+        <div class="step-content">
+          <h4>מעקב ומניעה</h4>
+          <p>בדיקת אפקטיביות הטיפול והמלצות למניעת חזרת המזיקים.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-section" aria-labelledby="contact-heading">
+    <h2 id="contact-heading" class="section-title" style="margin-bottom:1rem;">צרו קשר</h2>
+    <div class="contact-card">
+      <div class="contact-top">
+        <div class="contact-avatar" aria-hidden="true">👨‍🔧</div>
+        <div class="contact-info">
+          <h3>אבירם אושרי</h3>
+          <div class="subtitle">מדביר מורשה | לוכד נחשים מוסמך | אזור הצפון</div>
+          <div class="license-tags">
+            <span class="license-tag">מדביר תברואתי 3687</span>
+            <span class="license-tag">רט"ג A4876</span>
+          </div>
+        </div>
+      </div>
+      <div class="contact-buttons">
+        <a href="tel:0524284251" class="btn-phone-lg" aria-label="חייג 052-428-4251">📞 052-428-4251</a>
+        <a href="https://wa.me/972524284251" class="btn-wa-lg" target="_blank" rel="noopener" aria-label="שלח וואטסאפ">
+          <svg class="wa-svg" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          שלח וואטסאפ
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+
+<!-- TTS Panel (screen reader / blind) -->
+<div id="tts-panel" role="region" aria-label="קורא מסך" aria-live="polite">
+  <div id="tts-header">
+    <span>🔊 הקראת האתר</span>
+    <button onclick="document.getElementById('tts-panel').classList.remove('open')" style="background:none;border:none;color:#7ec88a;cursor:pointer;font-size:18px;" aria-label="סגור">✕</button>
+  </div>
+  <div id="tts-body">
+    <div id="tts-status">לחץ "קרא הכל" להקראת האתר המלא</div>
+    <div class="tts-btns">
+      <button class="tts-btn" id="tts-play-all" aria-label="קרא את כל האתר">▶ קרא הכל</button>
+      <button class="tts-btn" id="tts-contact" aria-label="קרא פרטי קשר">📞 פרטי קשר</button>
+      <button class="tts-btn" id="tts-stop" aria-label="עצור הקראה" disabled>⏹ עצור</button>
+    </div>
+    <label class="tts-lbl" for="tts-speed" style="display:block;margin-top:10px;">מהירות הקראה</label>
+    <input type="range" id="tts-speed" min="0.5" max="2" step="0.1" value="1" aria-label="מהירות הקראה">
+    <div style="display:flex;justify-content:space-between;font-size:11px;color:rgba(240,237,228,0.4);">
+      <span>איטי</span><span>רגיל</span><span>מהיר</span>
+    </div>
+  </div>
+</div>
+
+<!-- Color Blind Panel -->
+<div id="cb-panel" role="region" aria-label="מצב עיוורי צבעים">
+  <div class="cb-header">
+    <span>🎨 התאמת צבעים</span>
+    <button onclick="document.getElementById('cb-panel').classList.remove('open')" style="background:none;border:none;cursor:pointer;font-size:16px;color:#888;" aria-label="סגור">✕</button>
+  </div>
+  <div class="cb-options" role="radiogroup" aria-label="בחר סוג עיוורון צבעים">
+    <label class="cb-opt"><input type="radio" name="cb" value="none" checked> <span class="cb-swatch" style="background:linear-gradient(90deg,red,green,blue)"></span> רגיל</label>
+    <label class="cb-opt"><input type="radio" name="cb" value="deuteranopia"> <span class="cb-swatch" style="background:linear-gradient(90deg,#7b6d00,#7b7b00,#0000c8)"></span> דויטרנופיה (ירוק-אדום)</label>
+    <label class="cb-opt"><input type="radio" name="cb" value="protanopia"> <span class="cb-swatch" style="background:linear-gradient(90deg,#4b4b00,#9b9b00,#0000c8)"></span> פרוטנופיה (אדום)</label>
+    <label class="cb-opt"><input type="radio" name="cb" value="tritanopia"> <span class="cb-swatch" style="background:linear-gradient(90deg,#ff0000,#00a0a0,#0000c8)"></span> טריטנופיה (כחול-צהוב)</label>
+    <label class="cb-opt"><input type="radio" name="cb" value="grayscale"> <span class="cb-swatch" style="background:linear-gradient(90deg,#333,#888,#ccc)"></span> גווני אפור</label>
+  </div>
+</div>
+
+<!-- Floating CTA buttons (mobile) -->
+<div class="floating-cta" role="region" aria-label="כפתורי יצירת קשר מהירה">
+  <a href="tel:0524284251" class="float-phone" aria-label="התקשר עכשיו">📞 התקשר</a>
+  <a href="https://wa.me/972524284251" class="float-wa" target="_blank" rel="noopener" aria-label="וואטסאפ">
+    <svg class="wa-svg" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    וואטסאפ
+  </a>
+</div>
+
+<footer>
+  <p>אבירם אושרי | מדביר תברואתי 3687 | לוכד נחשים רט"ג A4876</p>
+  <p>📞 <a href="tel:0524284251">052-428-4251</a> &nbsp;|&nbsp;
+     <a href="https://wa.me/972524284251" target="_blank">וואטסאפ</a></p>
+</footer>
+
+<!-- Analytics Dashboard -->
+<button class="dash-toggle" id="dash-toggle-btn" aria-label="פתח דוח תנועה">
+  <span class="online-dot" aria-hidden="true"></span> תנועה
+</button>
+
+<div id="analytics-dashboard" role="dialog" aria-modal="true" aria-labelledby="dash-title">
+  <div class="dashboard-panel">
+    <button class="close-dash" id="close-dash" aria-label="סגור דוח">✕</button>
+    <h2 id="dash-title">📊 דוח תנועה באתר</h2>
+    <div class="stat-row">
+      <div class="stat-box">
+        <div class="stat-num" id="stat-visits">0</div>
+        <div class="stat-lbl">כניסות סה"כ</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num" id="stat-phone">0</div>
+        <div class="stat-lbl">לחיצות טלפון</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num" id="stat-wa">0</div>
+        <div class="stat-lbl">לחיצות וואטסאפ</div>
+      </div>
+    </div>
+    <h3 style="font-size:14px;font-weight:500;color:#555;margin-bottom:0.6rem;">פעולות אחרונות</h3>
+    <div class="events-list" id="events-list" aria-live="polite">
+      <p style="color:#aaa;font-size:13px;">עדיין אין פעולות מוקלטות</p>
+    </div>
+    <div style="margin-top:1.2rem;padding-top:1rem;border-top:0.5px solid #eee;">
+      <button id="reset-analytics" style="font-size:12px;color:#999;background:none;border:none;cursor:pointer;font-family:var(--font-body);">
+        אפס נתונים
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ===== ACCESSIBILITY: FONT + CONTRAST =====
+const btnFontUp = document.getElementById('btn-font-up');
+const btnFontDown = document.getElementById('btn-font-down');
+const btnContrast = document.getElementById('btn-contrast');
+let fontSize = 16;
+
+btnFontUp.addEventListener('click', () => {
+  fontSize = Math.min(fontSize + 2, 24);
+  document.documentElement.style.fontSize = fontSize + 'px';
+});
+btnFontDown.addEventListener('click', () => {
+  fontSize = Math.max(fontSize - 2, 12);
+  document.documentElement.style.fontSize = fontSize + 'px';
+});
+btnContrast.addEventListener('click', () => {
+  document.body.classList.toggle('high-contrast');
+  btnContrast.classList.toggle('active');
+  btnContrast.setAttribute('aria-pressed', document.body.classList.contains('high-contrast'));
+});
+
+// ===== SCREEN READER (TTS) =====
+const ttsPanel = document.getElementById('tts-panel');
+const ttsStatus = document.getElementById('tts-status');
+const ttsPlayAll = document.getElementById('tts-play-all');
+const ttsContact = document.getElementById('tts-contact');
+const ttsStop = document.getElementById('tts-stop');
+const ttsSpeed = document.getElementById('tts-speed');
+let ttsUtterance = null;
+const synth = window.speechSynthesis;
+
+function getHebrewVoice() {
+  const voices = synth.getVoices();
+  return voices.find(v => v.lang.startsWith('he')) ||
+         voices.find(v => v.lang.startsWith('ar')) ||
+         voices[0];
+}
+
+function speak(text, label) {
+  if (!synth) { ttsStatus.textContent = 'הדפדפן אינו תומך בהקראה'; return; }
+  synth.cancel();
+  ttsUtterance = new SpeechSynthesisUtterance(text);
+  ttsUtterance.rate = parseFloat(ttsSpeed.value);
+  ttsUtterance.lang = 'he-IL';
+  const voice = getHebrewVoice();
+  if (voice) ttsUtterance.voice = voice;
+  ttsUtterance.onstart = () => {
+    ttsStatus.textContent = '▶ מקריא: ' + (label || '');
+    ttsStop.disabled = false;
+    ttsPlayAll.disabled = true;
+    ttsContact.disabled = true;
+  };
+  ttsUtterance.onend = ttsUtterance.onerror = () => {
+    ttsStatus.textContent = '✓ ההקראה הסתיימה';
+    ttsStop.disabled = true;
+    ttsPlayAll.disabled = false;
+    ttsContact.disabled = false;
+  };
+  synth.speak(ttsUtterance);
+}
+
+const fullText = `ברוכים הבאים לאתר של אבירם אושרי, מדביר מקצועי ולוכד נחשים מוסמך.
+מדביר תברואתי מספר 3687. לוכד נחשים מוסמך רט"ג, רישיון A4876.
+אנחנו מטפלים במגוון מזיקים: חולדות ועכברים, ג'וקים, תיקנים ונמלי אש, יתושים וזבובים, פרעושים וקרציות, צרעות, ונחשים.
+אנחנו נותנים שירות לדירות, משרדים, חצרות עד 500 מטר רבוע, וגינות.
+לפרטים ותיאום: טלפון 052-428-4251, או שלחו הודעה בוואטסאפ.`;
+
+const contactText = `לתיאום עם אבירם אושרי — טלפון: 052-428-4251. 
+או שלחו הודעה בוואטסאפ. 
+המספר הוא: 052-428-4251.`;
+
+document.getElementById('btn-tts').addEventListener('click', () => {
+  ttsPanel.classList.toggle('open');
+  if (ttsPanel.classList.contains('open')) ttsPanel.querySelector('#tts-play-all').focus();
+});
+ttsPlayAll.addEventListener('click', () => speak(fullText, 'תוכן האתר המלא'));
+ttsContact.addEventListener('click', () => speak(contactText, 'פרטי קשר'));
+ttsStop.addEventListener('click', () => { synth.cancel(); ttsStatus.textContent = 'ההקראה נעצרה'; ttsStop.disabled = true; ttsPlayAll.disabled = false; ttsContact.disabled = false; });
+
+// load voices async
+if (synth) synth.addEventListener('voiceschanged', getHebrewVoice);
+
+// ===== COLOR BLIND MODE =====
+const cbPanel = document.getElementById('cb-panel');
+document.getElementById('btn-cb').addEventListener('click', () => {
+  cbPanel.classList.toggle('open');
+});
+document.querySelectorAll('input[name="cb"]').forEach(radio => {
+  radio.addEventListener('change', () => {
+    ['cb-deuteranopia','cb-protanopia','cb-tritanopia','cb-grayscale'].forEach(c => document.body.classList.remove(c));
+    if (radio.value !== 'none') document.body.classList.add('cb-' + radio.value);
+  });
+});
+
+// ===== DEAF MODE =====
+let deafMode = false;
+document.getElementById('btn-deaf').addEventListener('click', () => {
+  deafMode = !deafMode;
+  document.body.classList.toggle('deaf-mode', deafMode);
+  const btn = document.getElementById('btn-deaf');
+  btn.classList.toggle('active', deafMode);
+  btn.setAttribute('aria-pressed', deafMode);
+  if (deafMode) {
+    // Replace phone links with WhatsApp links for deaf users
+    document.querySelectorAll('a[href="tel:0524284251"]').forEach(el => {
+      el.dataset.origHref = el.href;
+      el.href = 'https://wa.me/972524284251';
+      el.dataset.origText = el.innerHTML;
+      el.innerHTML = el.innerHTML.replace('📞', '💬').replace('התקשר', 'שלח הודעה').replace('טלפון', 'וואטסאפ');
+      el.setAttribute('aria-label', 'שלח הודעת וואטסאפ לאבירם');
+      el.target = '_blank';
+    });
+    // speak indication
+    if (synth) speak('מצב חירשים פעיל. כל כפתורי הקשר מובילים כעת לוואטסאפ לשליחת הודעה כתובה.', 'מצב חירשים');
+  } else {
+    document.querySelectorAll('a[data-orig-href]').forEach(el => {
+      el.href = el.dataset.origHref;
+      el.innerHTML = el.dataset.origText;
+      el.removeAttribute('target');
+      el.setAttribute('aria-label', 'חייג 052-428-4251');
+    });
+  }
+});
+
+// ===== ANALYTICS ENGINE =====
+const STORAGE_KEY = 'aviram_analytics';
+
+function loadData() {
+  try {
+    return JSON.parse(localStorage.getItem(STORAGE_KEY)) || { visits: 0, phone: 0, wa: 0, events: [] };
+  } catch(e) {
+    return { visits: 0, phone: 0, wa: 0, events: [] };
+  }
+}
+
+function saveData(data) {
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); } catch(e) {}
+}
+
+function logEvent(type, label) {
+  const data = loadData();
+  if (type === 'visit') data.visits++;
+  if (type === 'phone') data.phone++;
+  if (type === 'wa') data.wa++;
+  const now = new Date();
+  const timeStr = now.toLocaleTimeString('he-IL', { hour: '2-digit', minute: '2-digit' });
+  const dateStr = now.toLocaleDateString('he-IL', { day: '2-digit', month: '2-digit' });
+  data.events.unshift({ label, time: timeStr + ' ' + dateStr });
+  if (data.events.length > 20) data.events = data.events.slice(0, 20);
+  saveData(data);
+  refreshDash();
+}
+
+function refreshDash() {
+  const data = loadData();
+  document.getElementById('stat-visits').textContent = data.visits;
+  document.getElementById('stat-phone').textContent = data.phone;
+  document.getElementById('stat-wa').textContent = data.wa;
+  const list = document.getElementById('events-list');
+  if (data.events.length === 0) {
+    list.innerHTML = '<p style="color:#aaa;font-size:13px;">עדיין אין פעולות מוקלטות</p>';
+  } else {
+    list.innerHTML = data.events.map(e =>
+      `<div class="event-item"><span>${e.label}</span><span class="event-time">${e.time}</span></div>`
+    ).join('');
+  }
+}
+
+// Track page visit (once per session)
+if (!sessionStorage.getItem('visited')) {
+  sessionStorage.setItem('visited', '1');
+  logEvent('visit', '👁 כניסה לאתר');
+}
+
+// Track phone clicks
+document.querySelectorAll('a[href="tel:0524284251"]').forEach(el => {
+  el.addEventListener('click', () => logEvent('phone', '📞 לחיצה על טלפון'));
+});
+
+// Track WhatsApp clicks
+document.querySelectorAll('a[href="https://wa.me/972524284251"]').forEach(el => {
+  el.addEventListener('click', () => logEvent('wa', '💬 לחיצה על וואטסאפ'));
+});
+
+// Dashboard toggle
+document.getElementById('dash-toggle-btn').addEventListener('click', () => {
+  refreshDash();
+  document.getElementById('analytics-dashboard').classList.add('open');
+});
+document.getElementById('close-dash').addEventListener('click', () => {
+  document.getElementById('analytics-dashboard').classList.remove('open');
+});
+document.getElementById('analytics-dashboard').addEventListener('click', e => {
+  if (e.target === document.getElementById('analytics-dashboard')) {
+    document.getElementById('analytics-dashboard').classList.remove('open');
+  }
+});
+document.getElementById('reset-analytics').addEventListener('click', () => {
+  if (confirm('לאפס את כל הנתונים?')) {
+    localStorage.removeItem(STORAGE_KEY);
+    refreshDash();
+  }
+});
+
+// Close dashboard on Escape
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') document.getElementById('analytics-dashboard').classList.remove('open');
+});
+
+refreshDash();
+</script>
+</body>
+</html>
